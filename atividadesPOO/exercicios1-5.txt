@@ -1,0 +1,17 @@
+1. Qual das alternativas abaixo melhor define o termo “classe”?
+ R:   a) Uma coleção de variáveis e funções trabalhando com essas variáveis.
+
+2. Qual das alternativas abaixo melhor define o termo “objeto”?
+ R:   a) Um objeto nos dá a capacidade de trabalhar com a classe e ter várias instâncias desta mesma classe. 
+
+3. Qual das alternativas abaixo melhor explica o termo "propriedade"?
+ R:   b) Uma variável dentro de uma classe.
+
+4. Qual das alternativas abaixo melhor explica o termo "método"?
+ R:   a) Uma função dentro de uma classe.
+ 
+ 5. Escreva o que você acha que deveria ser o nome da classe, os nomes das propriedades para o
+primeiro e último nome (sobrenome) e o nome do método que retorna “Olá”.
+R:  Nome da classe:Usuario
+    Propriedades:primeiro_nome,sobrenome
+    Método:mensagem
