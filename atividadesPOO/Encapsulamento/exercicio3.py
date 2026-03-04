@@ -8,7 +8,7 @@ acesso a ela. Crie um objeto desta classe (i.e. instância) e use os métodos pa
 dados.
 """
 class Empregado():
-    def __init__(self, nome, salario, projeto):
+    def __init__(self, nome="", salario=0, projeto=""):
         self.projeto = projeto
         self.__nome = nome
         self.__salario = salario
