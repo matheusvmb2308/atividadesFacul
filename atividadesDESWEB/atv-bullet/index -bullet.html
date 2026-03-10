@@ -10,9 +10,11 @@
 <body>
     <header id="header">
         <h1>O Método Bullet Jornal</h1>
-        <a href="https://www.facebook.com/bulletjournal"><img src="src/images/social-icons/facebook.png" alt="Imagem Facebook"></a>
-        |<a href="https://www.instagram.com/bulletjournal/"><img src="src/images/social-icons/instagram.png" alt="Imagem Instagram"></a>|
-        <a href="https://www.youtube.com/bulletjournal"><img src="src/images/social-icons/youtube.png" alt=""></a>
+        <p>
+            <a href="https://www.facebook.com/bulletjournal"><img src="src/images/social-icon/facebook.png" alt="Imagem Facebook"></a>
+            |<a href="https://www.instagram.com/bulletjournal/"><img src="src/images/social-icon/instagram.png" alt="Imagem Instagram"></a>|
+            <a href="https://www.youtube.com/bulletjournal"><img src="src/images/social-icon/youtube.png" alt=""></a>
+        </p>
     </header>
     <main>
         <section>
@@ -37,7 +39,7 @@
             <h3>Como criar o Bullet Journal perfeito em 5 passos?</h3>
             <ol>
                 <li>
-                    <strong>Entenda seu objetivo</strong>
+                    <h4>Entenda seu objetivo</h4>
                     <p>
                         Esse é o primeiríssimo passo. Não é possível avançar sem entender como um Bullet Journal poderia te ajudar.
                     </p>
@@ -56,25 +58,25 @@
                     </p>
                 </li>
                 <li>
-                    <strong>Escolha o tipo de caderno</strong>
+                    <h4>Escolha o tipo de caderno</h4>
                     <p>
                         O Bullet Journal pode ser feito com qualquer caderno, literalmente. O ideal é escolher de acordo com as suas necessidades e preferências. Veja a seguir algumas considerações.
                     </p>
                 </li>
                 <li>
-                    <strong>Estabeleça legendas</strong>
+                    <h4>Estabeleça legendas</h4>
                     <p>
                         As legendas são códigos usados para sinalizar a natureza da tarefa, seu status ou sua prioridade. Isso é importante para simplificar a rotina e otimizar o tempo por meio de um estímulo visual: você bate o olho e sabe o que já foi feito, o que ainda está na lista e o que é urgente.
                     </p>
                 </li>
                 <li>
-                    <strong>Defina as seções</strong>
+                    <h4>Defina as seções</h4>
                     <p>
                         Também chamadas de “logs”, as seções do Bullet Journal servem para dividir as categorias de anotações e manter o caderno ordenado. Você pode escolher a quantidade e o tipo das seções, mas algumas são clássicas. Veja a seguir.
                     </p>
                 </li>
                 <li>
-                    <strong>Crie o layout</strong>
+                    <h4>Crie o layout</h4>
                     <p>
                         Lembra que eu falei que o primeiríssimo passo é entender como é a sua rotina e o que você precisa organizar? Isso vai te ajudar a montar o layout do seu Bullet Journal.
                     </p>
@@ -138,15 +140,18 @@
                 <p>
                     <label for="assunto">Assunto</label>
                     <select name="assunto" id="assunto">
-                        <option value="metas_objetivos">Metas e Objetivos</option>
+                        <option value="metas-objetivos">Metas e Objetivos</option>
+                        <option value="colecoes-personalizadas">Coleções Personalizadas</option>
+                        <option value="registro-habito">Registro de Hábito</option>
+                        <option value="planejamento-financeiro">Planejamento Financeiro</option>
                     </select>
                 </p>
                 <p>
-                    <label for="telefone">Celular (somente números)</label>
+                    <label for="telefone">*Celular (somente números)</label>
                     <input type="tel" id="telefone" required>
                 </p>
                 <p>
-                    <label for="data_nascimento">Data de Nascimento</label>
+                    <label for="data_nascimento">*Data de Nascimento</label>
                     <input type="date" required id="data_nascimento">
                 </p>
                 <p>
@@ -154,7 +159,7 @@
                     <textarea name="observacoes" id="observacoes"></textarea>
                 </p>
                 <p>
-                    <label for="email">Email</label>
+                    <label for="email">*Email</label>
                     <input type="email" id="email" required>
                 </p>
                 <p>
@@ -164,7 +169,7 @@
                     </label>
                 </p>
                 <p>
-                    <input type="submit" value="LIMPAR FORMULÁRIO">
+                    <input type="reset" value="LIMPAR FORMULÁRIO">
                     <input type="submit" value="ENVIAR FORMULÁRIO">
                 </p>
             </form>
@@ -177,6 +182,7 @@
                     <p>
                         Você tem notas ( - ), ações ( • ), eventos ( o ) e uma adição recente —⁠ Humores ( = )!⁠
                     </p>
+                    <a href="src/videos/originais/simbologia.mp4"><video src="src/videos/simbologia.mp4" height="400"></video></a>
                 </li>
                 <li>
                     <h3>Bullet em 5 minutos</h3>
@@ -186,12 +192,14 @@
                     <p>
                         Recebemos essas perguntas com frequência, de pessoas que tentaram, pararam e tentaram novamente o Bullet Journaling. Há muitas informações por aí dizendo que seu Bullet Journal precisa de muitos componentes para ser um Bullet Journal.⁠Na verdade, você só precisa de 5 minutos.⁠
                     </p>
+                    <a href="src/videos/originais/bullet-5min.mp4"><video src="src/videos/bullet-5min.mp4" height="400"></video></a>
                 </li>
                 <li>
                     <h3>Tarefas que não se encaixam</h3>
                     <p>
                         No vídeo desta semana, Ryder explica o que fazer com tarefas no seu Bullet Journal que não se encaixam no dia, semana ou mês e só precisam acontecer "algum dia".
                     </p>
+                    <a href="src/videos/originais/tarefas-nao-encaixam.mp4"><video src="src/videos/tarefas-nao-encaixam.mp4" height="400"></video></a>
                 </li>
             </ul>
         </section>
@@ -199,7 +207,7 @@
             <h2>Links Úteis</h2>
             <ol>
                 <li>
-                    <p><strong>Como começar</strong></p>
+                    <h3>Como começar</h3>
                     <ol>
                         <li>
                             <a href="https://www.youtube.com/watch?v=cRVn3AzMcnI">O ÚNICO sistema de ORGANIZAÇÃO que funcionou para mim - O Bullet Journal</a>
@@ -210,9 +218,7 @@
                     </ol>
                 </li>
                 <li>
-                    <p>
-                        <strong>Exemplos de Bullet Jornal</strong>
-                    </p>
+                    <h3>Exemplos de bullet journal</h3>
                     <ol>
                         <li>
                             <a href="https://www.youtube.com/watch?v=dtC1M3NyxRA">Bullet journal ideas MARATHON - +200 ideas for your bujo</a>
@@ -233,9 +239,7 @@
                 Bujo fornece ferramentas simples para ajudá-lo a transformar suavemente o maneira como você trabalha, pensa, sente e vive, uma página de cada vez. Bujo fornece ferramentas simples para ajudá-lo a transformar suavemente o maneira como você trabalha, pensa, sente e vive, uma página de cada vez.
             </p>
             <a href="src/images/bujo.png"><img src="src/images/miniatures/min-bujo.png" alt="Bujo"></a>
-            <p>
-                <strong>Exemplos</strong>
-            </p>
+            <h3>Exemplos</h3>
             <a href="src/images/index.png"><img src="src/images/miniatures/min-index.png" alt="Index"></a>
             <a href="src/images/index-ano.png"><img src="src/images/miniatures/min-index-ano.png" alt="Index-Ano"></a>
             <a href="src/images/future-log.png"><img src="src/images/miniatures/min-future-log.png" alt="Future-log"></a>
