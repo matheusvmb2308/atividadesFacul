@@ -11,11 +11,14 @@ class Pessoa():
     self.idade = idade
     self.peso = peso
     self.altura = altura
+    self.nova_idade = idade
   def envelhecer(self):
-    self.idade = self.idade + 1
+    self.nova_idade = self.idade + 1
+    self.idade = self.nova_idade
   def crescer(self):
     if self.idade < 21:
-      self.altura += 0.5
+      if self.idade != self.nova_idade:  
+        self.altura += 0.5
   def emagrescer(self):
     self.peso -= 1
   def engordar(self):
@@ -23,8 +26,6 @@ class Pessoa():
   def getMostraDados(self):
     return f"Nome: {self.nome}, idade: {self.idade}, peso: {self.peso}, altura: {self.altura}"
 pessoa1 = Pessoa("Matheus", 19, 60, 170)
-print(pessoa1.getMostraDados())
 pessoa1.envelhecer()
-print(pessoa1.getMostraDados())
 pessoa1.crescer()
 print(pessoa1.getMostraDados())
