@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <header>
+    <header id="header">
         <h1>O Método Bullet Jornal</h1>
         <a href="https://www.facebook.com/bulletjournal"><img src="src/images/social-icons/facebook.png" alt="Imagem Facebook"></a>
         |<a href="https://www.instagram.com/bulletjournal/"><img src="src/images/social-icons/instagram.png" alt="Imagem Instagram"></a>|
@@ -32,7 +32,7 @@
                 descobrir o formato perfeito para a sua rotina. Veja a seguir como fazer isso!
             </p>
             <p>
-                <a href="">Adquira seu caderno (link deve ser direcionado para a lojinha)</a>
+                <a href="#lojinha">Adquira seu caderno (link deve ser direcionado para a lojinha)</a>
             </p>
             <h3>Como criar o Bullet Journal perfeito em 5 passos?</h3>
             <ol>
@@ -112,28 +112,167 @@
             <form action="#">
                 <p>
                     <label for="nome">*Nome Completo</label>
-                    <input type="text" id="nome" placeholder="Nome">
+                    <input type="text" id="nome" placeholder="Nome" required>
                 </p>
                 <fieldset>
-                    <legend>Tipo de mensagem:</legend>
+                    <legend>
+                        Tipo de mensagem:
+                    </legend>
                     <label>
-                        <input type="radio" value="1" name="relato">
+                        <input type="radio" 
+                        value="1" name="tipo">
                         Relato de experiência
                     </label>
                     <label>
-                        <input type="radio" value="0" name="duvidas">
+                        <input type="radio" value="0" name="tipo">
                         Dúvidas
                     </label>
                     <label>
-                        <input type="radio" name="outros" value="0">
+                        <input type="radio" name="tipo" value="0">
                         Outros
                     </label>
                     <p>
                         <input type="submit" value="Enviar">
                     </p>
                 </fieldset>
+                <p>
+                    <label for="assunto">Assunto</label>
+                    <select name="assunto" id="assunto">
+                        <option value="metas_objetivos">Metas e Objetivos</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="telefone">Celular (somente números)</label>
+                    <input type="tel" id="telefone" required>
+                </p>
+                <p>
+                    <label for="data_nascimento">Data de Nascimento</label>
+                    <input type="date" required id="data_nascimento">
+                </p>
+                <p>
+                    <label for="observacoes">Observações:</label>
+                    <textarea name="observacoes" id="observacoes"></textarea>
+                </p>
+                <p>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </p>
+                <p>
+                    <label for="notificacoes">
+                        <input type="checkbox" value="0" name="notificacoes" required>
+                        Deseja receber notificações por email sobre outras chamadas
+                    </label>
+                </p>
+                <p>
+                    <input type="submit" value="LIMPAR FORMULÁRIO">
+                    <input type="submit" value="ENVIAR FORMULÁRIO">
+                </p>
             </form>
         </section>
+        <section>
+            <h2>Entenda o Método</h2>
+            <ul>
+                <li>
+                    <h3>Simbologia</h3>
+                    <p>
+                        Você tem notas ( - ), ações ( • ), eventos ( o ) e uma adição recente —⁠ Humores ( = )!⁠
+                    </p>
+                </li>
+                <li>
+                    <h3>Bullet em 5 minutos</h3>
+                    <p>
+                        Como começo o Bullet Journaling? O que você escreve durante o dia? Quanto tempo leva para o Bullet Journal? O que você faz à noite em vez do dia?
+                    </p>
+                    <p>
+                        Recebemos essas perguntas com frequência, de pessoas que tentaram, pararam e tentaram novamente o Bullet Journaling. Há muitas informações por aí dizendo que seu Bullet Journal precisa de muitos componentes para ser um Bullet Journal.⁠Na verdade, você só precisa de 5 minutos.⁠
+                    </p>
+                </li>
+                <li>
+                    <h3>Tarefas que não se encaixam</h3>
+                    <p>
+                        No vídeo desta semana, Ryder explica o que fazer com tarefas no seu Bullet Journal que não se encaixam no dia, semana ou mês e só precisam acontecer "algum dia".
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>Links Úteis</h2>
+            <ol>
+                <li>
+                    <p><strong>Como começar</strong></p>
+                    <ol>
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=cRVn3AzMcnI">O ÚNICO sistema de ORGANIZAÇÃO que funcionou para mim - O Bullet Journal</a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=ORv60HxNzQo">Como Fazer o BULLET JOURNAL mais simples de todos</a>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <p>
+                        <strong>Exemplos de Bullet Jornal</strong>
+                    </p>
+                    <ol>
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=dtC1M3NyxRA">Bullet journal ideas MARATHON - +200 ideas for your bujo</a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=tR6CHxIHntk">Meu Bullet Journal Minimalista</a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=eTIcCcflQAk">Como componho meu Bullet Journal | Minimalista e Funcional</a>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </section>
+        <section>
+            <h2>Escreva uma vida melhor</h2>
+            <p>
+                Bujo fornece ferramentas simples para ajudá-lo a transformar suavemente o maneira como você trabalha, pensa, sente e vive, uma página de cada vez. Bujo fornece ferramentas simples para ajudá-lo a transformar suavemente o maneira como você trabalha, pensa, sente e vive, uma página de cada vez.
+            </p>
+            <a href="src/images/bujo.png"><img src="src/images/miniatures/min-bujo.png" alt="Bujo"></a>
+            <p>
+                <strong>Exemplos</strong>
+            </p>
+            <a href="src/images/index.png"><img src="src/images/miniatures/min-index.png" alt="Index"></a>
+            <a href="src/images/index-ano.png"><img src="src/images/miniatures/min-index-ano.png" alt="Index-Ano"></a>
+            <a href="src/images/future-log.png"><img src="src/images/miniatures/min-future-log.png" alt="Future-log"></a>
+        </section>
+        <section>
+            <h2 id="lojinha">Lojinha (Ao clicar na imagem o usuário deve ser direcionado para o link)</h2>
+            <ul>
+                <li>
+                    <h3>O caderno</h3>
+                    <a href="https://bulletjournal.com/products/edition-2?variant=33052778692705"><img src="src/images/caderno.png" alt="Caderno"></a>
+                    <p>
+                        Repleta de novos recursos, impressa em nosso novo papel lindamente formulado e de origem sustentável, a Edição 2 é o clássico caderno Bujo® redefinido.
+                    </p>
+                </li>
+                <li>
+                    <h3>Edição do Artista 2023</h3>
+                    <a href="https://bulletjournal.com/products/artist-edition-2023"><img src="src/images/ed-artista.png" alt="Edição Artista"></a>
+                    <p>
+                        Estamos comprometidos em apoiar e mostrar o talento incrível dentro da nossa comunidade. É por isso que temos orgulho de oferecer este caderno de edição limitada do artista, projetado por Annie (@ajournalbyannie, membro da comunidade Bujo). Este caderno de edição do artista vem embalado em uma caixa colecionável e é uma impressão única, tornando-o uma adição verdadeiramente única e especial a qualquer coleção de cadernos.
+                    </p>
+                </li>
+                <li>
+                    <h3>A caneta</h3>
+                    <a href="https://bulletjournal.com/products/the-bujo-drehgriffel"><img src="src/images/caneta.png" alt="Caneta"></a>
+                    <p>
+                        Fizemos uma parceria com a Leuchtturm 1917 para trazer a você uma edição especial de sua caneta Drehgriffel extremamente popular. Esta caneta é feita de alumínio e latão fresados ​​com precisão, laqueados e selados. A edição Bujo combina belos detalhes em latão com um acabamento texturizado preto fosco moderno.
+                    </p>
+                </li>
+            </ul>
+        </section>
     </main>
+    <footer>
+        <a href="#header">Voltar para o topo</a>
+        <p>
+            Copyright  2024 - Alguns direitos reservados
+        </p>
+        <p>Desenvolvido por: Seu nome</p>
+    </footer>
 </body>
 </html>
