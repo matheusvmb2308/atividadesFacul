@@ -3,6 +3,12 @@
 especifique quanto de comida ele fornece ao bichinho e por quanto tempo ele brinca com o bichinho.
 Faça com que estes valores afetem quão rapidamente os níveis de fome e tédio caem.
 """
+"""
+• Crie uma "porta escondida" no programa do bichinho virtual que mostre os valores exatos dos
+atributos do objeto. Consiga isto mostrando o objeto quando uma opção secreta, não listada no menu,
+for informada na escolha do usuário. Dica: acrescente um método especial str() à classe Bichinho.
+Comentario: Fiz uma leve alteração na atividade.
+"""
 import threading
 import time
 import os
@@ -46,6 +52,19 @@ class Bichinho():
             self.fome = 100
     def setAlterarIdade(self):
         self.idade += 1
+    def portaEscondida(self):
+        print("PARABÈNS!")
+        print("VOCÊ ACHOU O TAMAGUCHI ESCONDIDO!!")
+        ascii_art = r'''
+         .^._.^.
+         | . . |
+        (  ---  )
+        .'     '.
+        |/     \|
+         \ /-\ /
+          V   V
+        '''
+        print(ascii_art)
     def getMostraDados(self):
         return f"\nNome: {self.nome}, Saúde: {self.saude}, Fome: {self.fome}, Humor: {self.humor}, Idade: {self.idade}"
 def diminuiVidaSaude(personagem):
@@ -76,6 +95,7 @@ while True:
     print("[1] ALTERAR NOME")
     print("[2] BRINCAR COM O TAMAGUCHI")
     print("[3] ALIMENTAR O TAMAGUCHI")
+    print("[?] PORTA ESCONDIDA")
     print("[4] SAIR")
     opcao = int(input("Escolha uma opção: "))
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -92,5 +112,8 @@ while True:
         while fruta.lower() not in alimentos:
             fruta = str(input("Escolha uma fruta que esteja disponível: "))
         tamaguchi.alimentar(alimentos[fruta.lower()])
+    if opcao == 10:
+        tamaguchi.portaEscondida()
+        input("Enter para sair")
     if opcao == 4:
         break
