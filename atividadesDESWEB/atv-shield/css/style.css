@@ -1,7 +1,8 @@
 
 /* USO DIRETO */
-body {
+html {
   font-size: clamp(1rem, calc(0.5rem + 2vw), 1.625rem);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 header {
     display: flex;
@@ -20,4 +21,49 @@ header nav ul li:last-child a {
     color: white;
     padding: 10px;
     border-radius: 6px;
+}
+header nav ul li:last-child a:hover {
+    background: #44468f;
+}
+/* === Banner === */
+section.banner {
+    display: flex;
+    background: #F7F8FD;
+    padding: 3vw 10vw 3vw 10vw;
+}
+section.banner h2 {
+    font-size: 2.2rem;
+    color: #03045E;
+    font-weight: bold;
+}
+section.banner div.text {
+    padding: 0 5vw 0 0;
+}
+section.banner p {
+    margin: 5vh 0 0 0;
+    color: rgb(3, 4, 95, 0.5);
+}
+section.banner p button{
+    background: #0098FF;
+    padding: 3vw 10vw 3vw 10vw;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer
+}
+/* === Services ===*/
+section.services {
+    text-align: center;
+    background: #F7F8FD;
+    margin: 6vh 0 0 0;
+}
+section.services h2 {
+    font-weight: bold;
+    font-size: 2rem;
+    color: #03045E;
+}
+section.services ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 3vw 10vw 3vw 10vw;
 }
