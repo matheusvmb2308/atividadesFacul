@@ -61,9 +61,17 @@ section.services h2 {
     font-weight: bold;
     font-size: 2rem;
     color: #03045E;
+    padding: 8vw 0 7vw 0;
 }
 section.services ul {
     display: flex;
     justify-content: space-between;
-    padding: 3vw 10vw 3vw 10vw;
+}
+section.services ul h3 {
+    font-size: 1.2rem;
+    color: #03045E;
+    font-weight: bold;
+}
+section.services ul p {
+    color: rgb(3, 4, 95, 0.5);
 }
