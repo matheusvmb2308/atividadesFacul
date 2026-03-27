@@ -57,9 +57,8 @@ section.banner p button:hover {
 /* === Services ===*/
 section.services {
     text-align: center;
-    background: #F7F8FD;
-    margin: 6vh 0 0 0;
-    padding: 3vw 10vw 7vw 10vw;
+    background: #F7F8FD;    
+    padding: 7vw 10vw 7vw 10vw;
 }
 section.services h2 {
     font-weight: bold;
