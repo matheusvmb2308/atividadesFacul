@@ -58,3 +58,9 @@ section.video video {
     padding: 5vw 20vw 5vw 20vw;
     justify-content: center;
 }
+/*=== Brands ===*/
+section.brands {
+    padding: 3vw 9vw 3vw 9vw;
+    display: flex;
+    justify-content: center;
+}
