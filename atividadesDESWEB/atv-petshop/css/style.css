@@ -54,7 +54,7 @@ section.video {
 section.video div {
     border-radius: 6px;
 }
-section.video a video {
+section.video video {
     padding: 5vw 20vw 5vw 20vw;
     justify-content: center;
 }
