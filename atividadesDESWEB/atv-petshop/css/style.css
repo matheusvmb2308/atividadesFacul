@@ -64,3 +64,22 @@ section.brands {
     display: flex;
     justify-content: center;
 }
+/*=== Benefits ===*/
+section.benefits {
+    padding: 3vw 9vw 3vw 9vw;    
+    text-align: center;
+}
+section.benefits ul {
+    display: flex;
+    justify-content: space-between;
+} 
+section.benefits ul li h3 {
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+section.benefits ul li p {
+    padding: 2vw 1vw 2vw 0vw;
+    font-size: 2vw;
+    color: #2D2D2D;
+    opacity: 50%;
+}
