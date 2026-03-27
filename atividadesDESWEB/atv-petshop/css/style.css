@@ -1,0 +1,60 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 3vw 9vw 3vw 9vw;
+    font-size: 1.5rem;
+}
+header ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 3vw;
+}
+header li:last-child a{
+    background: #3366FF;
+    padding: 1vw 4vw 1vw 4vw;
+    border-radius: 6px;
+    color: white
+}
+header li:last-child a:hover {
+    background: #93abf5;
+}
+/*=== Banner ===*/
+section.banner {
+    display: flex;
+    justify-content: space-between;
+    padding: 3vw 9vw 3vw 9vw;
+    background: #F7F5FD;
+}
+
+section.banner p {
+    font-size: 2rem;
+    padding: 4vw 0 6vw 0;
+}
+section.banner h2 {
+    font-weight: bold;
+    font-size: 4rem;
+}
+section.banner div > p {
+    color: #2D2D2D;
+    opacity: 50%;
+}
+section.banner div  button {
+    background: #F8D57E;
+    padding: 1.5vw 3vw 1.5vw 3vw;
+    border-radius: 6px;
+    cursor: pointer;
+}
+section.banner div  button:hover {
+    background: #f7e3b1;
+}
+/*=== Video ===*/
+section.video {
+    background: #F2FAF8;
+}
+section.video div {
+    border-radius: 6px;
+}
+section.video a video {
+    padding: 5vw 20vw 5vw 20vw;
+    justify-content: center;
+}
