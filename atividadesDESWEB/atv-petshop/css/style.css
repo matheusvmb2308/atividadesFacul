@@ -18,6 +18,9 @@ header li:last-child a{
 header li:last-child a:hover {
     background: #93abf5;
 }
+body {
+    font-family: Poppins, sans-serif;
+}
 /*=== Banner ===*/
 section.banner {
     display: flex;
@@ -75,10 +78,32 @@ section.benefits ul {
 } 
 section.benefits ul li h3 {
     font-weight: bold;
-    font-size: 1.8rem;
+    font-size: 3vw;
 }
 section.benefits ul li p {
     padding: 2vw 1vw 2vw 0vw;
+    font-size: 2vw;
+    color: #2D2D2D;
+    opacity: 50%;
+}
+/*== Quote ===*/
+section.quote {
+    display: flex;
+    padding: 3vw 20vw 3vw 20vw;     
+    background: #ECE7FB;   
+}
+section.quote div {
+    padding: 0vw 2vw 0vw 2vw;
+}
+section.quote div:last-child h3 {
+    font-weight: bold;
+    font-size: 2vw
+}
+section.quote div:first-child img {
+    max-width: 25vw;
+}
+section.quote div:last-child p {
+    padding: 2vw 0vw 0vw 0vw;
     font-size: 2vw;
     color: #2D2D2D;
     opacity: 50%;
