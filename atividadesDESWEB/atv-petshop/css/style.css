@@ -30,7 +30,7 @@ section.banner {
 }
 
 section.banner p {
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 4vw 0 6vw 0;
 }
 section.banner h2 {
@@ -46,6 +46,7 @@ section.banner div  button {
     padding: 1.5vw 3vw 1.5vw 3vw;
     border-radius: 6px;
     cursor: pointer;
+    color: #2D2D2D
 }
 section.banner div  button:hover {
     background: #f7e3b1;
