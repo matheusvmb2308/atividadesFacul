@@ -1,3 +1,9 @@
+/* USO DIRETO */
+html {
+  font-size: clamp(1rem, calc(0.5rem + 2vw), 1.625rem);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 header{
     display: flex;
     justify-content: space-between;
@@ -19,7 +25,7 @@ header li:last-child a:hover {
     background: #93abf5;
 }
 body {
-    font-family: Poppins, sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 /*=== Banner ===*/
 section.banner {
@@ -30,16 +36,14 @@ section.banner {
 }
 
 section.banner p {
-    font-size: 1.5rem;
-    padding: 4vw 0 6vw 0;
+    font-size: 1.5vw;
+    padding: 4vw 13vw 6vw 0;
+    color: #2D2D2D;
+    opacity: 50%;
 }
 section.banner h2 {
     font-weight: bold;
-    font-size: 4rem;
-}
-section.banner div > p {
-    color: #2D2D2D;
-    opacity: 50%;
+    font-size: 2.5rem;
 }
 section.banner div  button {
     background: #F8D57E;
@@ -47,6 +51,9 @@ section.banner div  button {
     border-radius: 6px;
     cursor: pointer;
     color: #2D2D2D
+}
+section.banner div img {
+    max-width: 50vw;
 }
 section.banner div  button:hover {
     background: #f7e3b1;
@@ -60,13 +67,15 @@ section.video div {
 }
 section.video video {
     padding: 5vw 20vw 5vw 20vw;
-    justify-content: center;
 }
 /*=== Brands ===*/
 section.brands {
     padding: 4vw 8vw 4vw 8vw;
     display: flex;
     justify-content: center;
+}
+section.brands img {
+    padding: 0 2vw 0 0;
 }
 /*=== Benefits ===*/
 section.benefits {
@@ -79,11 +88,11 @@ section.benefits ul {
 } 
 section.benefits ul li h3 {
     font-weight: bold;
-    font-size: 3vw;
+    font-size: 1.5vw;
 }
 section.benefits ul li p {
     padding: 2vw 1vw 2vw 0vw;
-    font-size: 2vw;
+    font-size: 1.5vw;
     color: #2D2D2D;
     opacity: 50%;
 }
@@ -98,14 +107,37 @@ section.quote div {
 }
 section.quote div:last-child h3 {
     font-weight: bold;
-    font-size: 2vw
+    font-size: 1.5vw;
+    background: url(../images/quote.png) no-repeat;
+    background-size: auto 2vw;
+    padding: 2.5vw 0 0 0;
 }
 section.quote div:first-child img {
     max-width: 25vw;
 }
 section.quote div:last-child p {
     padding: 2vw 0vw 0vw 0vw;
-    font-size: 2vw;
+    font-size: 1.5vw;
     color: #2D2D2D;
     opacity: 50%;
+}
+/*Footer*/
+footer {
+    padding: 3vw 9vw 3vw 9vw;
+    display: flex;
+    justify-content: space-between;
+}
+footer div ul{
+    display: flex;
+    justify-content: space-between;
+}
+footer div > ul li {
+    display: grid;
+    padding: 0 0 0 3vw;
+}
+footer div h3 {
+    font-weight: bold;
+}
+footer div a {
+    font-size: 1vw;
 }
