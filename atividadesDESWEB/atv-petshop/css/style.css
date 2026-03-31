@@ -70,12 +70,14 @@ section.video video {
 }
 /*=== Brands ===*/
 section.brands {
-    padding: 4vw 8vw 4vw 8vw;
+    padding: 4vw 0vw 4vw 0vw;
+}
+section.brands ul {
     display: flex;
     justify-content: center;
 }
 section.brands img {
-    padding: 0 2vw 0 0;
+    padding: 0 5vw 0 0;
 }
 /*=== Benefits ===*/
 section.benefits {
@@ -127,17 +129,60 @@ footer {
     display: flex;
     justify-content: space-between;
 }
+footer div:first-child {
+    display: flex;
+    flex-direction: column;
+}
 footer div ul{
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
 }
-footer div > ul li {
-    display: grid;
-    padding: 0 0 0 3vw;
+footer div ul li {
+    display: flex;
+    flex-direction: column;
+    float: right;
+    padding: 0 2vw 0 2vw;
+    color: #2D2D2D;
 }
 footer div h3 {
     font-weight: bold;
+    font-size: 1vw;
+    pad: 1vw 0 0 0;
 }
 footer div a {
     font-size: 1vw;
+    padding: 1vw 0 0 0;
 }
+footer form{
+    display: flex;
+}
+footer form button {
+    background: #3366FF;
+    border-radius: 6px;
+    padding: 0.6vw 1.5vw 0.6vw 1.5vw;
+    color: white;
+}
+footer form input {
+    border-radius: 6px;
+    padding: 0.5vw 1vw 0.5vw 1vw;
+    margin: 0 1.5vw 0 0;
+    border: solid;
+    border-color: #D0D0D0;
+    max-width: 30vw;
+}
+footer > div > p:last-child {
+    margin: 4vw 0 0 0;
+    font-size: 1vw;
+    font-weight: bold;
+}
+footer div:last-child p {
+    display: flex;
+    float: right;
+    gap: 1vw
+}
+
+#upgrade-inbox {
+    font-size: 1vw;
+    color: #2D2D2D;
+}   
