@@ -1,0 +1,77 @@
+html {
+  font-size: clamp(1rem, calc(0.5rem + 2vw), 1.625rem);
+}
+/*=== Header ===*/
+header {
+    padding: 2vw 10vw 2vw 10vw;
+}
+header nav ul {
+    display: none;
+}   
+/*=== Notification ===*/
+section.notification {
+    background: #F6F0E4;
+    text-align: center;
+    padding: 2vw 3vw 2vw 3vw;
+    margin: 2vw 10vw;
+    border-radius: 10px;
+}
+section.notification p:last-child{
+    padding: 1vw 0vw 0vw 0vw;
+    text-decoration: underline;
+}
+/*=== Banner ===*/
+section.banner {
+    text-align: center;
+    padding: 2vw 10vw;
+}
+section.banner h1{
+    font-size: 2rem;
+    margin: 3vw 0;
+}
+section.banner p:first-child {
+    margin: 3vw 0;
+}
+section.banner a {
+    text-decoration: underline;
+}
+/*===News===*/
+section.news {
+    text-align: center;
+    padding: 2vw 10vw;
+}
+section.news h2 {
+    font-size: 1.6rem;
+}
+section.news ul li {
+    border: 1px solid #E4E4E4;
+    border-radius:10px;
+}
+section.news ul li {
+    font-size: 0.7rem;
+    margin: 4vw 0vw;
+}
+section.news ul li h4 {
+    font-size: 0.9rem;
+}
+section.news ul li h3 {
+    font-size: 1.2rem;
+}
+
+@media only screen and (min-width: 600px) {
+	header nav > a {
+        display: none;
+    }
+    header nav ul {
+        display: flex;
+        gap: 20px;
+    }
+    section.news ul {
+        display: flex;
+        justify-content: space-between;
+    }
+    section.news ul li {
+        width: 30%;
+        font-size: 0.7rem;
+    }
+} 
