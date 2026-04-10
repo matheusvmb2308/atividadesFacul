@@ -1,5 +1,9 @@
 html {
   font-size: clamp(1rem, calc(0.5rem + 2vw), 1.625rem);
+  font-family: "Gowun Batang", serif;
+}
+section.news, section.results, section.what {
+    padding: 2vw 10vw;
 }
 /*=== Header ===*/
 header {
@@ -35,10 +39,32 @@ section.banner p:first-child {
 section.banner a {
     text-decoration: underline;
 }
+/*=== What we do*/
+section.what {
+    text-align: center;
+}
+section.what h2 {
+    font-size: 2.3rem;
+    margin: 2vw 0;
+}
+section.what h3 {
+    margin: 4vw 0;
+    font-size: 1.5rem;
+}
+section.what h4 {
+    margin: 4vw 0;
+    font-size: 1rem;
+    color: #3D1A0D;
+}
+section.what ul li {
+    padding: 10vw 0;
+}
+section.what p {
+    font-weight: bold;
+}
 /*===News===*/
 section.news {
     text-align: center;
-    padding: 2vw 10vw;
 }
 section.news h2 {
     font-size: 1.6rem;
@@ -48,14 +74,50 @@ section.news ul li {
     border-radius:10px;
 }
 section.news ul li {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     margin: 4vw 0vw;
+    padding: 0 0 3vw 0;
 }
 section.news ul li h4 {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    padding: 0 0 3vw 0;
 }
 section.news ul li h3 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    padding: 0 0 3vw 0;
+}
+section.news ul li img {
+    width: 90%;
+    padding: 2vw 0 3vw 0;
+}
+/*=== Results ===*/
+section.results h2{
+    font-size: 2.5rem;        
+}
+section.results h3 {
+    margin: 2vw 0;
+    font-size: 1rem;
+    color: #3D1A0D;
+}
+section.results ul li {
+    border-left: 1px solid grey;
+    padding: 0 0 2vw 2vw;
+    margin: 2vw 0 2vw 0;
+}
+/*=== Join ===*/
+section.join {
+    background: url(../images/Call\ to\ action\ section.png) no-repeat;
+    background-size: 100% auto;
+    padding: 4vw 10vw;
+}
+section.join h2 {
+    font-size: 2.5rem;
+    color: white;
+    text-align: center;
+    background: rgba(0, 0,0 , 0.3);
+}
+section.join h2 a {
+    text-decoration: underline;
 }
 
 @media only screen and (min-width: 600px) {
@@ -73,5 +135,15 @@ section.news ul li h3 {
     section.news ul li {
         width: 30%;
         font-size: 0.7rem;
+        padding: 0 0 0.5vw 0;
     }
-} 
+    section.what ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    section.what ul li {
+        width: 30%;
+        padding: 0 2vw 0 2vw;
+    }
+}
