@@ -1,0 +1,69 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2vw 2vw;
+}
+header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+}
+header div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+}
+header div a {
+    color: #FBBC05;
+}
+header div button {
+    padding: 1vw 1.5vw;
+    background: #FBBC05;
+    color: white;
+    border-radius: 6px;
+}
+header div button:hover {
+    background: #a7851f;
+}
+/*=== Banner ===*/
+section.banner {
+    background: url(../images/background-banner.webp), url(../images/iPhone-13-Pro-Front.png);
+    background-color: #E1F4FF;
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, contain;
+    background-position: center, right;
+}
+section.banner > div {
+    padding: 5vw 60vw 5vw 10vw;
+}
+section.banner div div {
+    display: flex;
+    gap: 2vw;
+}
+section.banner h1 {
+    color: #252B42;
+    font-size: 3rem;
+    padding: 0 10vw 2vw 0;
+}
+section.banner > div > p {
+    color: #737373;
+    font-size: 1vw;
+    padding: 0 5vw 3vw 0;
+}
+section.banner p button {
+    flex: 1;
+    padding: 1vw 3vw;
+    color: white;
+    background: #252B42;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+}
+section.banner button:hover{
+    background: #1d2855;
+}
