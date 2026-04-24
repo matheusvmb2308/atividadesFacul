@@ -1,3 +1,7 @@
+html {
+    font-size: clamp(1rem, calc(0.5vw +0,8rem), 4rem);
+    font-family: "Cabin", sans-serif;
+}
 header {
     display: flex;
     justify-content: space-between;
@@ -23,6 +27,7 @@ header div button {
     background: #FBBC05;
     color: white;
     border-radius: 6px;
+    cursor: pointer;
 }
 header div button:hover {
     background: #a7851f;
@@ -36,7 +41,7 @@ section.banner {
     background-position: center, right;
 }
 section.banner > div {
-    padding: 5vw 60vw 5vw 10vw;
+    padding: 5vw 55vw 5vw 10vw;
 }
 section.banner div div {
     display: flex;
@@ -66,4 +71,32 @@ section.banner p button {
 }
 section.banner button:hover{
     background: #1d2855;
+}
+/*=== ready ===*/
+section.ready {
+    background: url(../images/banner-ready.png) no-repeat;
+    background-size: contain;
+    padding: 5vw 10vw;
+}
+section.ready > div:first-child {
+    text-align: center;
+}
+section.ready > div:first-child p {
+    color: #737373;
+}
+section.ready h2 {
+    color: #252B42;
+    font-size: 2rem;
+}
+section.ready > div:last-child {
+    float: right;
+}
+section.ready ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+section.ready ul li p:first-child {
+    background: #E1F4FF;
+    border-radius: 10px;
+
 }
