@@ -1,0 +1,27 @@
+section {
+    text-align: center;
+    border: 1px solid green;
+    border-radius: 6px;
+    padding: 2vw 8vw;
+}
+section form {
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    padding: 4vw 4vw;
+    display: grid;
+}
+section form p {
+    display: grid;
+    text-align: left;
+}
+section form input {
+    border-radius: 6px;
+    padding: 2vw 2vw;
+}
+section button {
+    background: green;
+    color: white;
+    border: green;
+    border-radius: 6px;
+    padding: 2vw 0;
+}

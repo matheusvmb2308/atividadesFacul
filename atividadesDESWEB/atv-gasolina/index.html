@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Gasolina ou Alcool</title>
 </head>
 
 <body>
     <main>
         <section>
+            <h1>Alcool ou Gasolina?</h1>
+            <p>
+                Descubra qual combustível compensa mais.
+            </p>
             <form action="#">
                 <p>
-                    <label for="alcool">Alcool</label>
-                    <input type="text" id="alcool">
+                    <label for="alcool">Preço do Álcool (R$ por litro)</label>
+                    <input type="text" id="alcool" placeholder="Digite o preço do álcool">
                 </p>
                 <p>
-                    <label for="gasolina">Gasolina</label>
-                    <input type="text" id="gasolina">
+                    <label for="gasolina">Preço da Gasolina (R$ por litro)</label>
+                    <input type="text" id="gasolina" placeholder="Digite o preço da gasolina">
                 </p>
-                <button type="button" onclick="validar()">Validar</button>
+                <button type="button" onclick="validar()">Calcular</button>
             </form>
             <h3></h3>
         </section>
