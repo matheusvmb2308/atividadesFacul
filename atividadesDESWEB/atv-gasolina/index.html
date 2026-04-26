@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Gasolina ou Alcool</title>
 </head>
@@ -10,33 +15,47 @@
 <body>
     <main>
         <section>
-            <h1>Alcool ou Gasolina?</h1>
-            <p>
-                Descubra qual combustível compensa mais.
-            </p>
-            <form action="#">
+            <div>
+                <h1>Álcool ou Gasolina?</h1>
                 <p>
-                    <label for="alcool">Preço do Álcool (R$ por litro)</label>
-                    <input type="text" id="alcool" placeholder="Digite o preço do álcool">
+                    Descubra qual combustível compensa mais.
                 </p>
-                <p>
-                    <label for="gasolina">Preço da Gasolina (R$ por litro)</label>
-                    <input type="text" id="gasolina" placeholder="Digite o preço da gasolina">
-                </p>
-                <button type="button" onclick="validar()">Calcular</button>
-            </form>
-            <h3></h3>
+                <form action="#">
+                    <p>
+                        <label for="alcool">Preço do Álcool (R$ por litro)</label>
+                        <input required type="text" id="alcool" placeholder="Digite o preço do álcool">
+                    </p>
+                    <p>
+                        <label for="gasolina">Preço da Gasolina (R$ por litro)</label>
+                        <input required type="text" id="gasolina" placeholder="Digite o preço da gasolina">
+                    </p>
+                    <button type="button" onclick="validar()">Calcular</button>
+                </form>
+                <h3>Resultado</h3>
+                <div>
+                    <h3>?</h3>
+                    <h3>Resultado</h3>
+                    <p>
+                        Preencha os valores e clique em calcular para ver qual combustível compensa mais.
+                    </p>
+                </div>
+            </div>
         </section>
     </main>
     <script>
-        function validar(){
+        function validar() {
             let gasolina = document.getElementById("gasolina").value;
             let alcool = document.getElementById("alcool").value;
-            if (parseFloat(alcool) <= parseFloat(gasolina) * 0.7) {
-                document.querySelector("h3").innerHTML = "Abastecer com alcool" 
-            }
-            else {
-                document.querySelector("h3").innerHTML = "Abastecer com gasolina" 
+            let resultado = document.querySelector("h3")
+            if (gasolina === "" || alcool === "") {
+                resultado.innerHTML = "Preencha todos os campos."
+            } else {
+                if (parseFloat(alcool) <= parseFloat(gasolina) * 0.7) {
+                    resultado.innerHTML = "Abastecer com Álcool"
+                }
+                else {
+                    resultado.innerHTML = "Abastecer com Gasolina"
+                }
             }
         }
     </script>
