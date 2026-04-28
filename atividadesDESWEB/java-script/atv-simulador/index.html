@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,51 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Simulador de Empréstimo</title>
 </head>
+
 <body>
-    
+    <section>
+        <div>
+            <h1>Simulador de Empréstimo</h1>
+            <form action="#">
+                <p>
+                    <label for="renda-bruta">Renda Bruta Mensal (R$):</label>
+                    <input type="text" id="renda-bruta" placeholder="Digite sua renda bruta mensal">
+                </p>
+                <p>
+                    <label for="emprestimo">Valor do Empréstimo (R$):</label>
+                    <input type="text" id="emprestimo" placeholder="Digite o valor do empréstimo">
+                </p>
+                <p>
+                    <label for="prazo">Prazo do Empréstimo (meses):</label>
+                    <input type="text" id="prazo" placeholder="Digite o prazo em meses">
+                </p>
+                <button type="button" onclick="calculo_emprestimo()">Calcular Parcelas</button>
+                <h2>Resultado</h2>
+            </form>
+        </div>
+    </section>
+    <script>
+        function calculo_emprestimo() {
+            let renda_bruta = parseFloat(document.getElementById("renda-bruta").value);
+            let emprestimo = parseFloat(document.getElementById("emprestimo").value);
+            let prazo = parseFloat(document.getElementById("prazo").value);
+            let resultado = document.querySelector("h2");
+            if (isNaN(renda_bruta) || isNaN(emprestimo) || isNaN(prazo)) {
+                resultado.innerHTML = "Preencha todos os campos"
+            } else {
+                let prazo_ano = Math.trunc(prazo / 12);
+                if (prazo_ano >= 1) {
+                    emprestimo += prazo_ano * 0.02
+                }
+                let valor_parcela = emprestimo / prazo;
+                if (valor_parcela > renda_bruta * 0.3) {
+                    resultado.innerHTML = "Esse empréstimo há risco de comprometimento de renda"
+                } else {
+                    resultado.innerHTML = "Esse empréstimo está dentro de uma condição adequada"
+                }
+            }
+        }
+    </script>
 </body>
+
 </html>
