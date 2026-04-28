@@ -42,7 +42,7 @@
             } else {
                 let prazo_ano = Math.trunc(prazo / 12);
                 if (prazo_ano >= 1) {
-                    emprestimo += prazo_ano * 0.02
+                    emprestimo += emprestimo * (prazo_ano * 0.02)
                 }
                 let valor_parcela = emprestimo / prazo;
                 if (valor_parcela > renda_bruta * 0.3) {
