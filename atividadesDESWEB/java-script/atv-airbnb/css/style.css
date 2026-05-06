@@ -1,8 +1,96 @@
+html {
+    font-size: clamp(1rem, calc(0.5rem + 1vw), 1.625rem);
+    font-family: "Kanit", sans-serif;
+    color: rgb(73, 73, 73);
+}
 section {
     display: flex;
     justify-content: center;
+    padding: 2vw 2vw;
 }
 section > div {
     border: 1px solid grey;
+    border-radius: 6px;
     box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    padding: 2vw 0;
+}
+section > div > h1 {
+    padding-left: 2vw; 
+}
+section > div > form {
+    display: grid;
+    padding: 2vw 2vw;
+}
+section > div > form > div {
+    border: solid 1px;
+    border-radius: 6px;
+}
+section > div > form > div > div {
+    display: flex;
+    justify-content: space-between;
+}
+section > div > form > div > div > p {
+    display: grid;
+    padding: 0 2vw;
+    border-bottom: 1px solid;
+}
+section > div > form > div > div > p:last-child {
+    border-left: 1px solid;
+}
+section > div > form > div > p {
+    display: grid;
+    padding: 0 2vw;
+    box-sizing: border-box;
+}
+section > div > form > button {
+    padding: 2vw;
+    background: rgb(196, 55, 97);
+    border-radius: 6px;
+    color: white;
+    margin: 2vw 0 0 0;
+    cursor: pointer;
+}
+section > div > form > button:hover {
+    background: rgb(185, 86, 116);
+}
+section > div > div {
+    margin: 0 2vw;
+    border-bottom: 1px solid grey;
+}
+section > div > div > div {
+    display: flex;
+    justify-content: space-between;
+    margin: 2vw 0;
+}
+section > div > div > div > h3 {
+    text-decoration: underline;
+}
+section > div > h2 {
+    text-align: center;
+}
+section > div > h3 {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: black;
+    padding: 1vw 2vw 0 2vw;
+}
+
+@media only screen and (min-width: 835px) {
+    section {
+        padding: 1vw 0 2vw 0;
+    }
+    section > div > form > button {
+        padding: 1vw;
+    }
+    section > div > form > div > div > p {
+        font-size: 1rem;
+        padding: 0 2vw;
+    }
+    section > div > div > div {
+        margin: 1vw;
+    }
+    section > div > form {
+        padding: 0 2vw;
+    }
 }

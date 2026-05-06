@@ -1,73 +1,76 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/style.css" />
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
     <title>Airbnb</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <main>
-      <section>
-        <div>
-            <h1>R$<span>620</span> noite</h1>
-            <form action="#">
-                <div>
-                    <p>
-                        <label for="checkin">CHECK-IN</label>
-                        <input type="date" id="checkin" onchange="reserva()"/>
-                    </p>
-                    <p>
-                        <label for="checkout">CHECK-OUT</label>
-                        <input type="date" id="checkout" onchange="reserva()"/>
-                    </p>
-                </div>
-                <label for="hospedes">HÓSPEDES</label>
-                <select name="hospedes" id="hospedes" onchange="reserva()">
-                    <option value="1">1 hóspede</option>
-                    <option value="2">2 hóspedes</option>
-                    <option value="3">3 hóspedes</option>
-                    <option value="4">4 hóspedes</option>
-                </select>
-                <button type="button" onclick="desconto()">Reservar</button>
-            </form>
-            <h2>Você ainda não será cobrado</h2>
+        <section>
             <div>
-                <p>
-                    <h3 id="h3_noites">
-                        R$<span>620</span> x <span id="noites">1</span> noites 
-                    <h3>
-                    <p>
-                        R$<span id="noite_diaria">620</span>
-                    </p>
-                </p>
-                <p>
-                    <h3>
-                        Taxa de limpeza
-                    <h3>
-                    <p>
-                        R$<span>120</span>
-                    </p>
-                </p>
-                <p>
-                    <h3>
-                        Taxa de serviço do Airbnb
-                    <h3>
-                    <p>
-                        R$<span id="taxa_airbnb">93</span>
-                    </p>
-                </p>
+                <h1><span>R$620</span> noite</h1>
+                <form action="#">
+                    <div>
+                        <div>
+                            <p>
+                                <label for="checkin">CHECK-IN</label>
+                                <input type="date" id="checkin" onchange="reserva()" />
+                            </p>
+                            <p>
+                                <label for="checkout">CHECK-OUT</label>
+                                <input type="date" id="checkout" onchange="reserva()" />
+                            </p>
+                        </div>
+                        <p>
+                            <label for="hospedes">HÓSPEDES</label>
+                            <select name="hospedes" id="hospedes" onchange="reserva()">
+                                <option value="1">1 hóspede</option>
+                                <option value="2">2 hóspedes</option>
+                                <option value="3">3 hóspedes</option>
+                                <option value="4">4 hóspedes</option>
+                            </select>
+                        </p>
+                    </div>
+                    <button type="button" onclick="desconto()">Reservar</button>
+                </form>
+                <h2>Você ainda não será cobrado</h2>
+                <div>
+                    <div>
+                        <h3 id="h3_noites">R$<span>620</span> x <span id="noites">1</span> noites</h3>
+                        <p>
+                            R$<span id="noite_diaria">620</span>
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Taxa de limpeza</h3>
+                        <p>
+                            R$<span>120</span>
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Taxa de serviço do Airbnb</h3>
+                        <p>
+                            R$<span id="taxa_airbnb">93</span>
+                        </p>
+                    </div>
+                </div>
+                <h3>Total sem impostos <span id="total">R$833</span></h3>
             </div>
-            <h2>Total sem impostos R$<span id="total">833</span></h2>
-        </div>
-      </section>
+        </section>
     </main>
     <script>
-        function reserva(){
+        function reserva() {
             let checkin = new Date(document.getElementById("checkin").value);
             let checkout = new Date(document.getElementById("checkout").value);
-            let noites_reserva = (checkout-checkin)/(24*60*60*1000);
+            let noites_reserva = (checkout - checkin) / (24 * 60 * 60 * 1000);
             let qtd_hospedes = parseFloat(document.getElementById("hospedes").value);
             let texto_noite = document.querySelector("h1 span");
             let valor_noite = 620
@@ -77,37 +80,38 @@
             let taxa_airbnb_texto = document.getElementById("taxa_airbnb")
             if (noites_reserva > 0) {
                 if (qtd_hospedes > 1) {
-                valor_noite += valor_noite * (qtd_hospedes * 0.2)
+                    valor_noite += valor_noite * (qtd_hospedes * 0.2)
                 };
                 let taxa_airbnb = (valor_noite * noites_reserva) * 0.15
-                texto_noite.innerText = valor_noite.toString();
-                h3_noites.innerHTML = "R$"+valor_noite+" x "+noites_reserva+" noites"
-                noite_diaria_texto.innerHTML = String(valor_noite*noites_reserva)
+                texto_noite.innerText = "R$"+valor_noite.toString();
+                h3_noites.innerHTML = "R$" + valor_noite + " x " + noites_reserva + " noites"
+                noite_diaria_texto.innerHTML = String(valor_noite * noites_reserva)
                 taxa_airbnb_texto.innerHTML = String(taxa_airbnb.toFixed(2))
                 let total = document.getElementById("total")
-                total.innerHTML = String(parseFloat(noite_diaria.innerHTML)+ taxa_limpeza + (taxa_airbnb))
+                total.innerHTML = "R$"+String(parseFloat(noite_diaria.innerHTML) + taxa_limpeza + (taxa_airbnb))
             }
         }
         function desconto() {
             let h2 = document.querySelector("h2")
             let checkin = new Date(document.getElementById("checkin").value);
             let checkout = new Date(document.getElementById("checkout").value);
-            let noites_reserva = (checkout-checkin)/(24*60*60*1000);
+            let noites_reserva = (checkout - checkin) / (24 * 60 * 60 * 1000);
             let desconto = 0
-            if (noites_reserva > 0 && !isNaN(noites_reserva)){
+            if (noites_reserva > 3 && !isNaN(noites_reserva)) {
                 if (noites_reserva >= 8) {
-                desconto = 0.40
-                } 
+                    desconto = 0.40
+                }
                 if (noites_reserva >= 5) {
                     desconto = 0.15
                 }
-                if (noites_reserva >=3) {
+                if (noites_reserva >= 3) {
                     desconto = 0.10
                 }
-                h2.innerHTML = "OFF"+desconto * 100
+                h2.innerHTML = "OFF" + desconto * 100
             }
 
         }
     </script>
-  </body>
+</body>
+
 </html>
