@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+</head>
+<body>
+    <section>
+        <form action="#">
+            <input type="text"><button type="button">Add</button>
+        </form>
+        <ul></ul>
+    </section>
+    <script>
+        let button = document.querySelector("button");
+        button.addEventListener("click", function() {
+            let input = document.querySelector("input")
+            let tarefa = document.createElement("li")
+            tarefa.innerHTML = input.value + " <span onClick='remover(this)'>X</span>"
+            let ul = document.querySelector("ul")
+            ul.appendChild(tarefa)
+            input.value = ""
+            input.focus()
+        })
+        function remover(elemento) {
+            elemento.parentElement.remove()
+
+        }
+    </script>
+</body>
+</html>
