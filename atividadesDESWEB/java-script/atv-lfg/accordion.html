@@ -57,7 +57,11 @@
         titulos.forEach(function(titulo){
             titulo.addEventListener("click", function(){
                 let texto = titulo.nextElementSibling
-                texto.style.display = "block"
+                if (texto.style.display == "none") {
+                    texto.style.display = "block"
+                } else {
+                    texto.style.display = "none"
+                }
             })
         })
 
