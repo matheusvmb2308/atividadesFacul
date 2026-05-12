@@ -1,0 +1,51 @@
+html {
+    font-size: clamp(1rem, calc(0.5rem + 2vw), 1.625rem);
+}
+body {
+    background: rgb(178, 178, 178);
+}
+section {
+    text-align: center;
+    padding: 0 4vw;
+}
+section div {
+    background: white;
+    height: 35vw;
+    border: solid 1px white;
+    border-radius: 6px;
+}
+section h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 1vw 0;
+}
+section form {
+    padding: 2vw 2vw;
+    display: flex;
+    justify-content: space-between;
+    background: white;
+}
+section form input {
+    border: solid 1px grey;
+    padding: 1vw 1vw;
+    width: 80%;
+}
+section form button {
+    background: blue;
+    color: white;
+    border-radius: 6px;
+    padding: 1vw 1vw;
+    margin: 0;
+}
+section ul li {
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px grey;
+    padding: 2vw 2vw;
+    background: white;
+}
+section ul li  span {
+    color: red;
+    cursor: pointer;
+}
