@@ -4,54 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accordion</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <section>
         <h2>FAQ</h2>
         <ul>
             <li>
-                <h3>Como fazer matricula</h3>
+                <h3>Como fazer matricula <span>+</span></h3>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus beatae ea eos necessitatibus laudantium similique assumenda, vitae sapiente, quasi odit eius voluptatibus tempora praesentium ipsum culpa facere? Cupiditate, eaque aperiam!
                 </p>
             </li>
              <li>
-                <h3>Como solicitar segunda chamada</h3>
+                <h3>Como solicitar segunda chamada <span>+</span></h3>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus beatae ea eos necessitatibus laudantium similique assumenda, vitae sapiente, quasi odit eius voluptatibus tempora praesentium ipsum culpa facere? Cupiditate, eaque aperiam!
                 </p>
             </li>
              <li>
-                <h3>Como pedir aproveitamento de disciplina</h3>
+                <h3>Como pedir aproveitamento de disciplina <span>+</span></h3>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus beatae ea eos necessitatibus laudantium similique assumenda, vitae sapiente, quasi odit eius voluptatibus tempora praesentium ipsum culpa facere? Cupiditate, eaque aperiam!
                 </p>
             </li>
         </ul>
     </section>
-    <style>
-        *{
-            list-style: none;
-            border: 0;
-            margin: 0;
-            padding: 0;
-        }
-        section {
-            width: 30%;
-            margin: 10vh auto;
-        }
-        ul li {
-            background: rgb(173, 173, 173);
-            padding: 10px;
-        }
-        ul li h3 {
-            background: rgb(0, 0, 0);
-            color: white;
-        }
-        ul li p {
-            display: none;
-        }
-    </style>
     <script>
         let titulos = document.querySelectorAll("h3")
         titulos.forEach(function(titulo){
@@ -59,8 +38,10 @@
                 let texto = titulo.nextElementSibling
                 if (texto.style.display == "none") {
                     texto.style.display = "block"
+                    titulo.querySelector("span").innerHTML = "-"
                 } else {
                     texto.style.display = "none"
+                    titulo.querySelector("span").innerHTML = "+"
                 }
             })
         })
