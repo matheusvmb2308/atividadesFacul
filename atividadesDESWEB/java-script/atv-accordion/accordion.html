@@ -36,13 +36,23 @@
         titulos.forEach(function(titulo){
             titulo.addEventListener("click", function(){
                 let texto = titulo.nextElementSibling
-                if (texto.style.display == "none") {
+                /*if (texto.style.display == "none") {
                     texto.style.display = "block"
                     titulo.querySelector("span").innerHTML = "-"
                 } else {
                     texto.style.display = "none"
                     titulo.querySelector("span").innerHTML = "+"
+                }*/
+               console.log(titulo.nextSibling.nextSibling.clientHeight)
+               let altura = titulo.nextSibling.nextSibling.clientHeight+0;
+               console.log(altura);
+               let li = titulo.parentElement;
+                if (li.style.height == altura+"px") {
+                    li.style.height = "30px"
+                } else {
+                    li.style.height =altura+"px"
                 }
+                
             })
         })
 
