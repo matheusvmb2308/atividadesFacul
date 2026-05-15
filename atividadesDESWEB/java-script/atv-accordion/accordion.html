@@ -32,7 +32,11 @@
         </ul>
     </section>
     <script>
-        let titulos = document.querySelectorAll("h3")
+        let titulos = document.querySelectorAll("h3");
+        titulos.forEach(function(titulo){
+        let alturaTitulo = titulo.clientHeight+10;
+        titulo.parentElement.style.height = alturaTitulo+"px";
+        });
         titulos.forEach(function(titulo){
             titulo.addEventListener("click", function(){
                 let texto = titulo.nextElementSibling
@@ -43,16 +47,19 @@
                     texto.style.display = "none"
                     titulo.querySelector("span").innerHTML = "+"
                 }*/
-               console.log(titulo.nextSibling.nextSibling.clientHeight)
-               let altura = titulo.nextSibling.nextSibling.clientHeight+0;
+               console.log(titulo.nextSibling)
+               let alturaTitulo = titulo.clientHeight+10;
+               let altura = titulo.nextSibling.nextSibling.clientHeight+alturaTitulo;
                console.log(altura);
+               let span = document.querySelector("span")
                let li = titulo.parentElement;
                 if (li.style.height == altura+"px") {
-                    li.style.height = "30px"
+                    li.style.height = alturaTitulo+"px"
+                    span.innerHTML  = "+"
                 } else {
                     li.style.height =altura+"px"
+                    span.innerHTML = "-"
                 }
-                
             })
         })
 
