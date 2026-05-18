@@ -79,7 +79,8 @@ class Inventory:
         self.guitars = []
 
     def add_guitar(self, serial_number, price, builder, model, typeg, back_wood, top_wood):
-        guitar = Guitar(serial_number, price, builder, model, typeg, back_wood, top_wood)
+        guitar_espec = GuitarSpec(builder, model, typeg, back_wood, top_wood)
+        guitar = Guitar(serial_number, price, guitar_espec)
         self.guitars.append(guitar)
 
     def get_guitar(self, serial_number):
@@ -91,23 +92,25 @@ class Inventory:
     def search_guitar(self, search_guitar):
         found_guitars = []
         for guitar in self.guitars:
+            guitar = guitar.get_spec()
+            self.search_guitar_espec = search_guitar.get_spec()
             # Parece que nada mudou, mas com "Enums", não precisamos nos preocupar com essas comparações 
             # sendo prejudicadas por erros ortográficos ou problemas de maiúscula/minúscula
-            if search_guitar.get_builder() != guitar.get_builder():
+            if self.search_guitar_espec.get_builder() != guitar.get_builder():
                 continue
             
             # A única propriedade com a qual precisamos nos preocupar é o "model", já que ainda é uma String
-            model = search_guitar.get_model().lower()
+            model = self.search_guitar_espec.get_model().lower()
             if model and model != "" and model != guitar.get_model().lower():
                 continue
             
             # Parece que nada mudou, mas com "Enums", não precisamos nos preocupar com essas comparações 
             # sendo prejudicadas por erros ortográficos ou problemas de maiúscula/minúscula
-            if search_guitar.get_typeg() != guitar.get_typeg():
+            if self.search_guitar_espec.get_typeg() != guitar.get_typeg():
                 continue
-            if search_guitar.get_back_wood() != guitar.get_back_wood():
+            if self.search_guitar_espec.get_back_wood() != guitar.get_back_wood():
                 continue
-            if search_guitar.get_top_wood() != guitar.get_top_wood():
+            if self.search_guitar_espec.get_top_wood() != guitar.get_top_wood():
                 continue
             found_guitars.append(guitar)
         if found_guitars:
@@ -124,9 +127,9 @@ inventory.add_guitar("V95693", 1499.95, Builder.FENDER.value, "Stratocastor", Ty
 inventory.add_guitar("V92341", 1600.00, Builder.FENDER.value, "Stratocastor", TypeG.ELETRIC.value, Wood.ALDER.value, Wood.ALDER.value)
 inventory.add_guitar("11277", 3999.95, Builder.COLLINGS.value, "Stratocastor", TypeG.ACOUSTIC.value, Wood.INDIAN_ROSEWOOD.value, Wood.INDIAN_ROSEWOOD.value)
 
-
+guitar_epec = GuitarSpec(Builder.FENDER.value, "Stratocastor", TypeG.ELETRIC.value, Wood.ALDER.value, Wood.ALDER.value)
 # Buscando por uma guitarra que o Erin gosta: Fender Stratocastor elétrica com corpo de Alder e tampo de Alder
-whatErinLikes = Guitar(" ", 0, Builder.FENDER.value, "Stratocastor", TypeG.ELETRIC.value, Wood.ALDER.value, Wood.ALDER.value)
+whatErinLikes = Guitar(" ", 0, guitar_epec)
 guitars = inventory.search_guitar(whatErinLikes)
 if guitars is not None:
     for guitar in guitars:
