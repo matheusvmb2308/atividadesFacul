@@ -31,10 +31,6 @@
             border-radius: 6px;
             cursor: pointer;
         }
-          ul li{
-            /*height: 30px;*/
-       
-          }
           ul li div {
             background: white;
             height: 0;
