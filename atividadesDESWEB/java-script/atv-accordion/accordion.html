@@ -13,51 +13,50 @@
         <ul>
             <li>
                 <h3>Como fazer matricula <span>+</span></h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus beatae ea eos necessitatibus laudantium similique assumenda, vitae sapiente, quasi odit eius voluptatibus tempora praesentium ipsum culpa facere? Cupiditate, eaque aperiam!
-                </p>
+                <div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus beatae ea eos necessitatibus laudantium similique assumenda, vitae sapiente, quasi odit eius voluptatibus tempora praesentium ipsum culpa facere? Cupiditate, eaque aperiam!
+                    </p>
+                </div>
             </li>
              <li>
                 <h3>Como solicitar segunda chamada <span>+</span></h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus beatae ea eos necessitatibus laudantium similique assumenda, vitae sapiente, quasi odit eius voluptatibus tempora praesentium ipsum culpa facere? Cupiditate, eaque aperiam!
-                </p>
+                <div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus beatae ea eos necessitatibus laudantium similique assumenda, vitae sapiente, quasi odit eius voluptatibus tempora praesentium ipsum culpa facere? Cupiditate, eaque aperiam!
+                    </p>
+                </div>
             </li>
              <li>
                 <h3>Como pedir aproveitamento de disciplina <span>+</span></h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus beatae ea eos necessitatibus laudantium similique assumenda, vitae sapiente, quasi odit eius voluptatibus tempora praesentium ipsum culpa facere? Cupiditate, eaque aperiam!
-                </p>
+                <div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus beatae ea eos necessitatibus laudantium similique assumenda, vitae sapiente, quasi odit eius voluptatibus tempora praesentium ipsum culpa facere? Cupiditate, eaque aperiam!
+                    </p>
+                </div>
+                
             </li>
         </ul>
     </section>
     <script>
         let titulos = document.querySelectorAll("h3");
         titulos.forEach(function(titulo){
-        let alturaTitulo = titulo.clientHeight+10;
-        titulo.parentElement.style.height = alturaTitulo+"px";
+            
+    console.log(titulo.scrollHeight)
         });
         titulos.forEach(function(titulo){
             titulo.addEventListener("click", function(){
+               
                 let texto = titulo.nextElementSibling
-                /*if (texto.style.display == "none") {
-                    texto.style.display = "block"
-                    titulo.querySelector("span").innerHTML = "-"
-                } else {
-                    texto.style.display = "none"
-                    titulo.querySelector("span").innerHTML = "+"
-                }*/
-               console.log(titulo.nextSibling)
-               let alturaTitulo = titulo.clientHeight+10;
-               let altura = titulo.nextSibling.nextSibling.clientHeight+alturaTitulo;
-               console.log(altura);
+
                let span = document.querySelector("span")
-               let li = titulo.parentElement;
-                if (li.style.height == altura+"px") {
-                    li.style.height = alturaTitulo+"px"
+               
+                if (texto.style.height != "0px" && texto.style.height != "") {
+                    texto.style.height = 0
                     span.innerHTML  = "+"
                 } else {
-                    li.style.height =altura+"px"
+                    let altura = texto.scrollHeight + 20;
+                    texto.style.height =(altura)+"px"
                     span.innerHTML = "-"
                 }
             })
