@@ -1,0 +1,4 @@
+section ul {
+    display: flex;
+    justify-content: center;
+}

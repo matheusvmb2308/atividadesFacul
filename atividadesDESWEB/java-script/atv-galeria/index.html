@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Geleria</title>
+</head>
+<body>
+    <main>
+        <section>
+            <ul>
+                <li>
+                    <div>
+                        <img src="images/imagem-fox.png" alt="imagem-fox">
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <img src="images/image-whale.png" alt="imagem-whale">
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <img src="images/image-monkey.png" alt="imagem-monkey">
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <img src="images/image-deer.png" alt="imagem-deer">
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <script>
+        let imagens = document.querySelectorAll("li")
+        imagens.forEach(function(imagem) {
+            imagem.addEventListener("click", function(){
+                console.log("salve")
+                console.log(imagem)
+            })
+        })
+    </script>
+</body>
+</html>
