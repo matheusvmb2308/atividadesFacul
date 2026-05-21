@@ -13,7 +13,7 @@
             <ul>
                 <li>
                     <div>
-                        <img src="images/imagem-fox.png" alt="imagem-fox">
+                        <img src="images/image-fox.png" alt="imagem-fox">
                     </div>
                 </li>
                 <li>
@@ -38,8 +38,14 @@
         let imagens = document.querySelectorAll("li")
         imagens.forEach(function(imagem) {
             imagem.addEventListener("click", function(){
-                console.log("salve")
                 console.log(imagem)
+                let aberta = (imagem.style.width === "200%");
+                imagens.forEach(function(img){
+                    img.style.width = "25%"
+                })
+                if (!aberta) {
+                    imagem.style.width = "200%"
+                }
             })
         })
     </script>

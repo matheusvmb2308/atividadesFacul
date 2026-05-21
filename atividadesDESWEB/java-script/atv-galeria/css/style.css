@@ -1,4 +1,22 @@
 section ul {
     display: flex;
+}
+body {
+    background: black;
+}
+section ul li {
+    width: 25%;
+    transition: width 1s;
+}
+section {
+    display: flex;
     justify-content: center;
+}
+section img {
+    object-fit: cover;
+    object-position: center;
+    overflow: scroll;
+    transition: width 1s;
+    height: 99dvh;
+    width: 100%;
 }
