@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Captcha</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <div>
+                <h1>Captcha</h1>
+                <p>
+                    00:00
+                </p>
+            </div>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <h2>CLIQUE NA COR: <span></span></h2>
+        </section>
+    </main>
+    <script>
+
+        const colors = [
+            { name: "AZUL", value: "#3498db" },
+            { name: "VERDE", value: "#1abc9c" },
+            { name: "ROXO", value: "#9b59b6" },
+            { name: "LARANJA", value: "#e67e22" },
+            { name: "VERMELHO", value: "#e74c3c" },
+            { name: "CINZA", value: "#34495e" }
+        ];
+        const itens = document.querySelectorAll("li");
+        let span = document.querySelector("span")
+        for (let i = 0; i < itens.length; i++) {
+            itens[i].addEventListener("click", function () {
+                let corspan = document.querySelector("span").style.color
+                if (itens[i].style.background == corspan) {
+                    alert("CORRETO")
+                }
+            })
+            itens[i].style.background = colors[i].value
+        }
+        function sortearCor() {
+            let indice = parseInt(Math.random() * 6)
+            let cor = colors[indice]
+            span.innerHTML = cor.name
+            span.style.color = cor.value
+        }
+        sortearCor()
+
+    </script>
+</body>
+
+</html>
