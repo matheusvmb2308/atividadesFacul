@@ -7,6 +7,8 @@ body {
 section ul li {
     width: 25%;
     transition: width 1s;
+    overflow: hidden;
+    position: relative;
 }
 section {
     display: flex;
@@ -19,4 +21,19 @@ section img {
     transition: width 1s;
     height: 99dvh;
     width: 100%;
+}
+section h1 {
+    position: absolute;
+    color: white;
+    bottom: 50px;
+    left: 10px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+section p {
+    position: absolute;
+    color: white;
+    bottom: 30px;
+    left: 10px;
+    font-size: 1.2rem;
 }

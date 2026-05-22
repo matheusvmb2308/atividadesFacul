@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,40 +8,54 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Geleria</title>
 </head>
+
 <body>
     <main>
         <section>
             <ul>
                 <li>
-                    <div>
-                        <img src="images/image-fox.png" alt="imagem-fox">
-                    </div>
+
+                    <img src="images/image-fox.png" alt="imagem-fox">
+                    <h1>FENNEC FOX</h1>
+                    <p>
+                        India
+                    </p>
                 </li>
                 <li>
-                    <div>
-                        <img src="images/image-whale.png" alt="imagem-whale">
-                    </div>
+
+                    <img src="images/image-whale.png" alt="imagem-whale">
+                    <h1>HUMPBACK WHALE</h1>
+                    <p>
+                        South Africa
+                    </p>
                 </li>
                 <li>
-                    <div>
-                        <img src="images/image-monkey.png" alt="imagem-monkey">
-                    </div>
+
+                    <img src="images/image-monkey.png" alt="imagem-monkey">
+                    <h1>COMMON BROWN BABBON</h1>
+                    <p>
+                        South Africa
+                    </p>
                 </li>
                 <li>
-                    <div>
-                        <img src="images/image-deer.png" alt="imagem-deer">
-                    </div>
+
+                    <img src="images/image-deer.png" alt="imagem-deer">
+                    <h1>SPOTTED DEER</h1>
+                    <p>
+                        Amazon
+                    </p>
                 </li>
             </ul>
         </section>
     </main>
     <script>
         let imagens = document.querySelectorAll("li")
-        imagens.forEach(function(imagem) {
-            imagem.addEventListener("click", function(){
+        imagens.forEach(function (imagem) {
+            imagem.addEventListener("click", function () {
                 console.log(imagem)
+                let h1 = document.querySelector("h1")
                 let aberta = (imagem.style.width === "200%");
-                imagens.forEach(function(img){
+                imagens.forEach(function (img) {
                     img.style.width = "25%"
                 })
                 if (!aberta) {
@@ -50,4 +65,5 @@
         })
     </script>
 </body>
+
 </html>
