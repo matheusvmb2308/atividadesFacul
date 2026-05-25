@@ -92,25 +92,25 @@ class Inventory:
     def search_guitar(self, search_guitar):
         found_guitars = []
         for guitar in self.guitars:
-            guitar = guitar.get_spec()
+            guitar_spec = guitar.get_spec()
             self.search_guitar_espec = search_guitar.get_spec()
             # Parece que nada mudou, mas com "Enums", não precisamos nos preocupar com essas comparações 
             # sendo prejudicadas por erros ortográficos ou problemas de maiúscula/minúscula
-            if self.search_guitar_espec.get_builder() != guitar.get_builder():
+            if self.search_guitar_espec.get_builder() != guitar_spec.get_builder():
                 continue
             
             # A única propriedade com a qual precisamos nos preocupar é o "model", já que ainda é uma String
             model = self.search_guitar_espec.get_model().lower()
-            if model and model != "" and model != guitar.get_model().lower():
+            if model and model != "" and model != guitar_spec.get_model().lower():
                 continue
             
             # Parece que nada mudou, mas com "Enums", não precisamos nos preocupar com essas comparações 
             # sendo prejudicadas por erros ortográficos ou problemas de maiúscula/minúscula
-            if self.search_guitar_espec.get_typeg() != guitar.get_typeg():
+            if self.search_guitar_espec.get_typeg() != guitar_spec.get_typeg():
                 continue
-            if self.search_guitar_espec.get_back_wood() != guitar.get_back_wood():
+            if self.search_guitar_espec.get_back_wood() != guitar_spec.get_back_wood():
                 continue
-            if self.search_guitar_espec.get_top_wood() != guitar.get_top_wood():
+            if self.search_guitar_espec.get_top_wood() != guitar_spec.get_top_wood():
                 continue
             found_guitars.append(guitar)
         if found_guitars:
@@ -133,6 +133,7 @@ whatErinLikes = Guitar(" ", 0, guitar_epec)
 guitars = inventory.search_guitar(whatErinLikes)
 if guitars is not None:
     for guitar in guitars:
-        print(f"Erin, talvez você goste desta: {guitar.get_builder()} {guitar.get_model()} {guitar.get_typeg()} guitar:\n{guitar.get_back_wood()} na traseira e laterais, {guitar.get_top_wood()} no tampo.\nEla pode ser sua por apenas US${guitar.get_price()}! \n")
+        guitar_spec = guitar.get_spec()
+        print(f"Erin, talvez você goste desta: {guitar_spec.get_builder()} {guitar_spec.get_model()} {guitar_spec.get_typeg()} guitar:\n{guitar_spec.get_back_wood()} na traseira e laterais, {guitar_spec.get_top_wood()} no tampo.\nEla pode ser sua por apenas US${guitar.get_price()}! \n")
 else:
   print("Desculpe Erin, não temos nada para você")
