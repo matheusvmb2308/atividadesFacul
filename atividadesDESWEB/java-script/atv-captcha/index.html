@@ -43,9 +43,11 @@
         let span = document.querySelector("span")
         for (let i = 0; i < itens.length; i++) {
             itens[i].addEventListener("click", function () {
-                let corspan = document.querySelector("span").style.color
-                if (itens[i].style.background == corspan) {
-                    alert("CORRETO")
+                let corspan = document.querySelector("span").innerHTML
+                let namecor = colors[i].name
+                if (namecor == corspan) {
+                    console.log("Correto")
+                    sortearCor()
                 }
             })
             itens[i].style.background = colors[i].value
@@ -54,7 +56,7 @@
             let indice = parseInt(Math.random() * 6)
             let cor = colors[indice]
             span.innerHTML = cor.name
-            span.style.color = cor.value
+            span.style.color = colors[parseInt(Math.random() * 6)].value
         }
         sortearCor()
 
