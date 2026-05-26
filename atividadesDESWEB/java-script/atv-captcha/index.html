@@ -11,7 +11,7 @@
 
 <body>
     <main>
-        <section>
+        <section class="captcha">
             <div>
                 <h1>Captcha</h1>
                 <p>
@@ -28,9 +28,13 @@
             </ul>
             <h2>CLIQUE NA COR: <span></span></h2>
         </section>
+        <section class="bemvindo">
+            <h1>Seja Bem Vindo</h1>
+        </section>
     </main>
     <script>
-
+        const audioAcerto = new Audio('audio_correto.mp3');
+        const audioErro = new Audio('audio_incorreto.mp3');
         const colors = [
             { name: "AZUL", value: "#3498db" },
             { name: "VERDE", value: "#1abc9c" },
@@ -41,14 +45,30 @@
         ];
         const itens = document.querySelectorAll("li");
         let span = document.querySelector("span")
+        let tentativa = 0;
+        let acerto = 0
         for (let i = 0; i < itens.length; i++) {
             itens[i].addEventListener("click", function () {
+                if (tentativa >= 3) {
+                    window.location.href = "fimtempo.html"
+                    return
+                }
                 let corspan = document.querySelector("span").innerHTML
                 let namecor = colors[i].name
                 if (namecor == corspan) {
+                    audioAcerto.play();
                     console.log("Correto")
+                    acerto += 1
+                    if (acerto >= 3) {
+                        document.querySelector(".captcha").style.display = "none"
+                        document.querySelector(".bemvindo").style.display = "block"
+                        return
+                    }
                     sortearCor()
+                } else {
+                    audioErro.play()
                 }
+                tentativa += 1
             })
             itens[i].style.background = colors[i].value
         }
@@ -59,7 +79,23 @@
             span.style.color = colors[parseInt(Math.random() * 6)].value
         }
         sortearCor()
-
+        function iniciar() {
+            let timer = document.querySelector("p")
+            const inicio = Date.now();
+            intervalo = setInterval(() => {
+                let agora = Date.now();
+                let ms = agora - inicio;
+                cronometro = new Date(ms).toString().substr(19,5);
+                if (ms >= 6000) {
+                    clearInterval(intervalo);
+                    if (document.querySelector(".captcha").style.display != "none") {
+                        window.location.href = "fimtempo.html"
+                    }
+                }
+                timer.innerHTML = cronometro
+            }, 1000);
+        }
+        iniciar()
     </script>
 </body>
 
