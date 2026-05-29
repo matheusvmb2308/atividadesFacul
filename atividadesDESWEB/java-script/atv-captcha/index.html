@@ -1,102 +1,125 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Captcha</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <main>
-        <section class="captcha">
-            <div>
-                <h1>Captcha</h1>
-                <p>
-                    00:00
-                </p>
-            </div>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-            <h2>CLIQUE NA COR: <span></span></h2>
-        </section>
-        <section class="bemvindo">
-            <h1>Seja Bem Vindo</h1>
-        </section>
+      <section class="captcha">
+        <div>
+          <h1>Captcha</h1>
+          <p>00:00</p>
+        </div>
+        <h2 class="acerto">Acertos: <span></span>/3</h2>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <h2 class="cor">CLIQUE NA COR: <span></span></h2>
+      </section>
+      <section class="bemvindo">
+        <h1>Seja Bem Vindo</h1>
+      </section>
     </main>
     <script>
-        const audioAcerto = new Audio('audio_correto.mp3');
-        const audioErro = new Audio('audio_incorreto.mp3');
-        const colors = [
-            { name: "AZUL", value: "#3498db" },
-            { name: "VERDE", value: "#1abc9c" },
-            { name: "ROXO", value: "#9b59b6" },
-            { name: "LARANJA", value: "#e67e22" },
-            { name: "VERMELHO", value: "#e74c3c" },
-            { name: "CINZA", value: "#34495e" }
-        ];
-        const itens = document.querySelectorAll("li");
-        let span = document.querySelector("span")
-        let tentativa = 0;
-        let acerto = 0
-        for (let i = 0; i < itens.length; i++) {
-            itens[i].addEventListener("click", function () {
-                if (tentativa >= 3) {
-                    window.location.href = "fimtempo.html"
-                    return
-                }
-                let corspan = document.querySelector("span").innerHTML
-                let namecor = colors[i].name
-                if (namecor == corspan) {
-                    audioAcerto.play();
-                    console.log("Correto")
-                    acerto += 1
-                    if (acerto >= 3) {
-                        document.querySelector(".captcha").style.display = "none"
-                        document.querySelector(".bemvindo").style.display = "block"
-                        return
-                    }
-                    sortearCor()
-                } else {
-                    audioErro.play()
-                }
-                tentativa += 1
-            })
-            itens[i].style.background = colors[i].value
+      const audioAcerto = new Audio("audio_correto.mp3");
+      const audioErro = new Audio("audio_incorreto.mp3");
+      const colors = [
+        { name: "AZUL", value: "#3498db" },
+        { name: "VERDE", value: "#1abc9c" },
+        { name: "ROXO", value: "#9b59b6" },
+        { name: "LARANJA", value: "#e67e22" },
+        { name: "VERMELHO", value: "#e74c3c" },
+        { name: "CINZA", value: "#34495e" },
+      ];
+      let span_acerto = document.querySelector(".acerto > span")
+      const itens = document.querySelectorAll("li");
+      let span = document.querySelector(".cor > span");
+      let acerto = 0;
+      localStorage.setItem("Acertos",acerto)
+      span_acerto.innerHTML = acerto;
+      embaralhar(colors);
+      for (let i = 0; i < itens.length; i++) {
+        itens[i].addEventListener("click", function () {
+          let corspan = document.querySelector(".cor").innerHTML;
+          let namecor = colors[i].name;
+          if (namecor == corspan) {
+            audioAcerto.play();
+            span_acerto.innerHTML = acerto
+            acerto += 1;
+            trocaCores()
+            if (acerto >= 3) {
+              document.querySelector(".captcha").style.display = "none";
+              document.querySelector(".bemvindo").style.display = "block";
+              return;
+            }
+            sortearCor();
+          } else {
+            audioErro.play();
+            window.location.href = "fimtempo.html";
+          }
+        });
+        itens[i].style.background = colors[i].value;
+      }
+      function sortearCor() {
+        let indice = parseInt(Math.random() * 6);
+        let cor = colors[indice];
+        span.innerHTML = cor.name;
+        span.style.color = colors[parseInt(Math.random() * 6)].value;
+      }
+      sortearCor();
+      function iniciar() {
+        let timer = document.querySelector("p");
+        const inicio = Date.now();
+        intervalo = setInterval(() => {
+          let agora = Date.now();
+          let ms = agora - inicio;
+          cronometro = new Date(ms).toString().substr(19, 5);
+          if (ms >= 6000) {
+            clearInterval(intervalo);
+            if (document.querySelector(".captcha").style.display != "none") {
+              window.location.href = "fimtempo.html";
+            }
+          }
+          timer.innerHTML = cronometro;
+        }, 1000);
+      }
+      function trocaCores (){
+        embaralhar(colors)
+        for (let i = 0; i < itens.length; i++)  {
+            itens[i].style.background = colors[i].value;
         }
-        function sortearCor() {
-            let indice = parseInt(Math.random() * 6)
-            let cor = colors[indice]
-            span.innerHTML = cor.name
-            span.style.color = colors[parseInt(Math.random() * 6)].value
-        }
-        sortearCor()
-        function iniciar() {
-            let timer = document.querySelector("p")
-            const inicio = Date.now();
-            intervalo = setInterval(() => {
-                let agora = Date.now();
-                let ms = agora - inicio;
-                cronometro = new Date(ms).toString().substr(19,5);
-                if (ms >= 6000) {
-                    clearInterval(intervalo);
-                    if (document.querySelector(".captcha").style.display != "none") {
-                        window.location.href = "fimtempo.html"
-                    }
-                }
-                timer.innerHTML = cronometro
-            }, 1000);
-        }
-        iniciar()
-    </script>
-</body>
+      }
+      trocaCores()
+      function embaralhar(array) {
+        let currentIndex = array.length,
+          randomIndex;
 
+        // Enquanto houver elementos para embaralhar...
+        while (currentIndex !== 0) {
+          // Escolhe um elemento restante...
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex--;
+
+          // E troca ele com o elemento atual.
+          [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex],
+            array[currentIndex],
+          ];
+        }
+
+        return array;
+      }
+      iniciar();
+    </script>
+  </body>
 </html>
