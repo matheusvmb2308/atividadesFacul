@@ -28,6 +28,9 @@
       </section>
       <section class="bemvindo">
         <h1>Seja Bem Vindo</h1>
+        <p>
+          Você Acertou cocluíu o Captcha
+        </p>
       </section>
     </main>
     <script>
@@ -44,24 +47,29 @@
       let span_acerto = document.querySelector(".acerto > span")
       const itens = document.querySelectorAll("li");
       let span = document.querySelector(".cor > span");
-      let acerto = 0;
-      localStorage.setItem("Acertos",acerto)
+      let acerto = parseInt(localStorage.getItem("Acertos"))|| 0;
       span_acerto.innerHTML = acerto;
+       if (acerto >= 3) {
+          document.querySelector(".captcha").style.display = "none";
+          document.querySelector(".bemvindo").style.display = "block";
+          localStorage.removeItem("Tempo")
+        }
       embaralhar(colors);
       for (let i = 0; i < itens.length; i++) {
         itens[i].addEventListener("click", function () {
-          let corspan = document.querySelector(".cor").innerHTML;
+          let corspan = document.querySelector(".cor > span").innerHTML;
           let namecor = colors[i].name;
           if (namecor == corspan) {
             audioAcerto.play();
-            span_acerto.innerHTML = acerto
             acerto += 1;
-            trocaCores()
+            localStorage.setItem("Acertos", acerto)
+            span_acerto.innerHTML = acerto
             if (acerto >= 3) {
               document.querySelector(".captcha").style.display = "none";
               document.querySelector(".bemvindo").style.display = "block";
-              return;
+              localStorage.removeItem("Tempo")
             }
+            trocaCores()
             sortearCor();
           } else {
             audioErro.play();
@@ -77,20 +85,25 @@
         span.style.color = colors[parseInt(Math.random() * 6)].value;
       }
       sortearCor();
+      let localTimer = localStorage.getItem("Tempo") || 0;
+      if (localTimer >= 6000) {
+        window.location.href = "fimtempo.html";
+      }
       function iniciar() {
         let timer = document.querySelector("p");
-        const inicio = Date.now();
+        const inicio = Date.now() - localTimer;
         intervalo = setInterval(() => {
           let agora = Date.now();
           let ms = agora - inicio;
+          localStorage.setItem("Tempo", ms)
           cronometro = new Date(ms).toString().substr(19, 5);
+          timer.innerHTML = cronometro;
           if (ms >= 6000) {
             clearInterval(intervalo);
             if (document.querySelector(".captcha").style.display != "none") {
               window.location.href = "fimtempo.html";
             }
           }
-          timer.innerHTML = cronometro;
         }, 1000);
       }
       function trocaCores (){
