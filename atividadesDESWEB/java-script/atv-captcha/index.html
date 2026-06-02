@@ -32,6 +32,10 @@
           Você Acertou cocluíu o Captcha
         </p>
       </section>
+      <section class="falha">
+            <a href="index.html"><button type="button" onclick="reset()">Voltar</button></a>
+            <h1>Voce Errou o Captcha!</h1>
+        </section>
     </main>
     <script>
       const audioAcerto = new Audio("audio_correto.mp3");
@@ -73,7 +77,7 @@
             sortearCor();
           } else {
             audioErro.play();
-            window.location.href = "fimtempo.html";
+            
           }
         });
         itens[i].style.background = colors[i].value;
@@ -84,14 +88,10 @@
         span.innerHTML = cor.name;
         span.style.color = colors[parseInt(Math.random() * 6)].value;
       }
-      sortearCor();
-      let localTimer = localStorage.getItem("Tempo") || 0;
-      if (localTimer >= 6000) {
-        window.location.href = "fimtempo.html";
-      }
+      sortearCor(); 
       function iniciar() {
         let timer = document.querySelector("p");
-        const inicio = Date.now() - localTimer;
+        const inicio = Date.now();
         intervalo = setInterval(() => {
           let agora = Date.now();
           let ms = agora - inicio;
@@ -101,7 +101,8 @@
           if (ms >= 6000) {
             clearInterval(intervalo);
             if (document.querySelector(".captcha").style.display != "none") {
-              window.location.href = "fimtempo.html";
+              document.querySelector(".falha").style.display = "block";
+              document.querySelector(".captcha").style.display = "none"
             }
           }
         }, 1000);
@@ -131,6 +132,9 @@
         }
 
         return array;
+      }
+      function reset() {
+        localStorage.setItem("Acertos", 0)
       }
       iniciar();
     </script>

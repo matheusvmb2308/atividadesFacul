@@ -30,3 +30,6 @@ section h2 {
 section.bemvindo {
     display: none;
 }
+section.falha {
+    display: none;
+}
