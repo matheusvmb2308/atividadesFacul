@@ -308,11 +308,16 @@
         let itens = document.querySelectorAll("li")
         let element_image = document.createElement("img")
         let paises_sorteados = []
+        let span_acerto = document.querySelector("span")
+        let acerto = 0
         for (let i = 0; i < 9; i++) {
             itens[i].addEventListener("click", function () {
                 let pais_clicado = itens[i].children;
                 if (pais_clicado.name === document.querySelector("h2").innerHTML) {
-                    console.log("Deu boa")
+                    acerto += 1;
+                    console.log("Deu boa");
+                    console.log(acerto);
+                    span_acerto.innerHTML = acerto.toString() 
                 }
             })
         }
