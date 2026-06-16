@@ -1,3 +1,10 @@
+main {
+    display: flex;
+    justify-content: center;
+}
+section {
+    width: 400px;
+}
 section.iniciar {
     background: url(../images/fundo_inicio.png) no-repeat;
     background-size: contain;
@@ -14,7 +21,7 @@ section.iniciar {
         font-weight: bold;
     }
     p {
-        color: grey;
+        color: rgb(211, 211, 211);
         font-size: 1.2rem;
     }
     button {
@@ -30,12 +37,44 @@ section.iniciar {
 section.bandeiras {
     display: grid;
     text-align: center;
+    div.div-h2 {
+        padding: 1.2rem;
+        margin: 2rem;
+        background: #bee5cc;
+        border-radius: 6px;
+    }
+    h2 {
+        font-size: 1.5rem;
+        padding: 2vw 5vw;                                
+    }
     ul {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
     }
     ul li {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
+        padding: 1rem;
+        border-radius: 6px;
+    }
+}
+section.bandeiras div:first-child {
+    margin: 1.5rem 2rem 0 2rem;
+    border-radius: 6px;
+    background-color: grey;
+    p {
+        font-size: 1.2rem;
+    }
+}
+section.bandeiras div:last-child {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+    button {
+        border: solid 1px;
+        padding: 0 1.2rem;
+        border-radius: 6px;
     }
 }

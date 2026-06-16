@@ -23,7 +23,7 @@
             <div>
                 <p>00:00</p>
             </div>
-            <div>
+            <div class="div-h2">
                 <h2></h2>
             </div>
             <ul>
@@ -37,9 +37,22 @@
                 <li></li>
                 <li></li>
             </ul>
+            <div>
+                <p>
+                    <span>0</span>/3 Acertos
+                </p>
+                <button>SAIR</button>
+            </div>
         </section>
     </main>
     <script>
+       const colors = [
+        { name: "AZUL", value: "#5dade2" },      
+        { name: "VERDE", value: "#48c9b0" },  
+        { name: "ROXO", value: "#af7ac5" },   
+        { name: "LARANJA", value: "#f5b041" },
+        { name: "VERMELHO", value: "#ec7063" }    
+        ];
         const FLAGS = [
             {
                 "id": 1,
@@ -313,6 +326,7 @@
                 })
                 let element_image = document.createElement("img");
                 let pais_sorteado = getPais()
+                itens[i].style.background = getCorLi()
                 while (paises_sorteados.includes(pais_sorteado.name)) {
                     pais_sorteado = getPais();
                 }
@@ -322,18 +336,21 @@
                 itens[i].appendChild(element_image);
             }
         }
-        console.log(paises_sorteados)
+        gerarImagens();
         function getPais() {
             let index = parseInt(Math.random() * 50);
             return FLAGS[index]
         }
-
-        gerarImagens();
         function getNomePais() {
             let index = parseInt(Math.random() * 9)
             document.querySelector("h2").innerHTML = paises_sorteados[index]
         }
         getNomePais()
+        function getCorLi() {
+            let index = parseInt(Math.random() * 5)
+            
+            return colors[index].value
+        }
     </script>
 </body>
 
