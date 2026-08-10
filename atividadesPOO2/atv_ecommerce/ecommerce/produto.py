@@ -4,12 +4,13 @@ from ecommerce.categoria import Categoria
 class Produto:
 
     def __init__(
-        self, nome: str, preco: float, quantidade_estoque: int, categoria: Categoria
+        self, nome: str, preco: float, quantidade_estoque: int, categoria: Categoria, descricao = None
     ) -> None:
         self.nome = nome
         self.preco = preco
         self.quantidade_estoque = quantidade_estoque
         self.categoria = categoria
+        self.descricao = descricao
 
     def esta_disponivel(self) -> bool:
         return self.quantidade_estoque > 0

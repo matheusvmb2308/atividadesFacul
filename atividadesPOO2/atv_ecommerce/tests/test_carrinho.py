@@ -54,3 +54,8 @@ class TestCarrinho:
             assert False, "Deveria ter lançado exceção"
         except ValueError:
             pass
+    def test_esvaziar_carrinho(self)-> None:
+        carrinho = Carrinho()
+        carrinho.adicionar_item(self.notebook, 1)
+        carrinho.adicionar_item(self.mouse, 3)
+        carrinho.esvaziar()

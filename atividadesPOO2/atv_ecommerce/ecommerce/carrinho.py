@@ -19,7 +19,11 @@ class Carrinho:
 
     def quantidade_itens(self) -> int:
         return len(self.itens)
-
+    def esvaziar(self):
+        if self.quantidade_itens() <= 0:
+            raise ValueError("Carrinho Vazio")
+        else: 
+            self.itens.clear()
 
 if __name__ == "__main__":  
     from ecommerce.categoria import Categoria
@@ -35,3 +39,5 @@ if __name__ == "__main__":
 
     print(f"Itens no carrinho: {carrinho.quantidade_itens()}")
     print(f"Total: R$ {carrinho.calcular_total():.2f}")
+    carrinho.esvaziar()
+    print(f"Quantidade: {carrinho.quantidade_itens()}")

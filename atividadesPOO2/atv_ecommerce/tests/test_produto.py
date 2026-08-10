@@ -67,3 +67,6 @@ class TestProduto:
             assert False, "Deveria ter lançado exceção"
         except ValueError:
             pass
+    def test_verificando_valor_descricao(self) -> None:
+        p = Produto("Celular", 2000.0, 5, self.cat, "Barato")
+        assert p.descricao == "Barato"
