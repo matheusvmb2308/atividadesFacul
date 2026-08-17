@@ -35,3 +35,38 @@ class TestPedido:
         pedido._status = "pago"
         with pytest.raises(ValueError):
             pedido.adicionar_item(self.mouse, 1)
+
+    def test_pagar(self) -> None:
+        pedido = Pedido()
+        pedido.adicionar_item(self.notebook, 1)
+        pedido.pagar()
+        assert pedido.status == "pago"
+        assert pedido.pagamento is not None
+
+    def test_enviar(self) -> None:
+        pedido = Pedido()
+        pedido.adicionar_item(self.notebook, 1)
+        pedido.pagar()
+        pedido.enviar()
+        assert pedido.status == "enviado"
+
+    def test_cancelar_pedido_criado(self) -> None:
+        pedido = Pedido()
+        pedido.adicionar_item(self.notebook, 1)
+        pedido.cancelar()
+        assert pedido.status == "cancelado"
+
+    def test_nao_cancelar_pedido_entregue(self) -> None:
+        pedido = Pedido()
+        pedido.adicionar_item(self.notebook, 1)
+        pedido.pagar()
+        pedido.enviar()
+        pedido.entregar()
+        with pytest.raises(ValueError):
+            pedido.cancelar()
+
+    def test_transicao_invalida_lanca_erro(self) -> None:
+        pedido = Pedido()
+        pedido.adicionar_item(self.notebook, 1)
+        with pytest.raises(ValueError):
+            pedido.enviar()
