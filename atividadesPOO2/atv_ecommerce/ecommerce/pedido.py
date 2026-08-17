@@ -37,6 +37,10 @@ class Pedido:
                 f"Transicao invalida: {self._status} -> {novo_status}"
             )
         self._status = novo_status
+    def confirmar_pagamento(self) -> None:
+        self._transicionar(StatusPedido.PAGO)
+        self._pagamento = Pagamento(self, self.calcular_total())
+        self._pagamento.confirmar()
 
     def pagar(self) -> None:
         self._transicionar(StatusPedido.PAGO)
