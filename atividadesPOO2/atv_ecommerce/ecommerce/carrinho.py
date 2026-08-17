@@ -1,5 +1,5 @@
 from ecommerce.item_carrinho import ItemCarrinho
-
+from ecommerce.pedido import Pedido
 
 class Carrinho:
 
@@ -24,6 +24,13 @@ class Carrinho:
             raise ValueError("Carrinho Vazio")
         else: 
             self.itens.clear()
+    def finalizar(self) -> Pedido:
+        if not self.itens:
+            raise ValueError("Carrinho vazio")
+        pedido = Pedido()
+        for item in self.itens:
+            pedido.adicionar_item(item.produto, item.quantidade)
+        return pedido
 
 if __name__ == "__main__":  
     from ecommerce.categoria import Categoria

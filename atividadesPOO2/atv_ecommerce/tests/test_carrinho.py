@@ -59,3 +59,4 @@ class TestCarrinho:
         carrinho.adicionar_item(self.notebook, 1)
         carrinho.adicionar_item(self.mouse, 3)
         carrinho.esvaziar()
+        assert carrinho.quantidade_itens() == 0

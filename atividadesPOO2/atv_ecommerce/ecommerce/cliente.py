@@ -3,8 +3,14 @@ class Cliente:
         self.nome = nome
         self.email = email
         self.carrinho: "Carrinho | None" = None
+        self._pedidos: list["Pedido"] = []
     def possui_carrinho(self) -> bool:
         return self.carrinho is not None
+    @property
+    def pedidos(self) -> list["Pedido"]:
+        return list(self._pedidos)
+    def adicionar_pedido(self, pedido: "Pedido") -> None:
+        self._pedidos.append(pedido)
 
 if __name__ == "__main__":  
     c = Cliente("João", "joao@email.com")
