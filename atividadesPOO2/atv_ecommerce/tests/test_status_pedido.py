@@ -13,3 +13,4 @@ class TestStatusPedido:
         assert StatusPedido.transicao_valida(StatusPedido.CRIADO, StatusPedido.ENTREGUE) is False
         assert StatusPedido.transicao_valida(StatusPedido.CRIADO, StatusPedido.ENVIADO) is False
         assert StatusPedido.transicao_valida(StatusPedido.PAGO, StatusPedido.ENTREGUE) is False
+        assert StatusPedido.transicao_valida(StatusPedido.ENTREGUE, StatusPedido.CANCELADO) is False
