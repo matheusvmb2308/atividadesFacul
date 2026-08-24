@@ -1,7 +1,7 @@
 from ecommerce.item_pedido import ItemPedido
 from ecommerce.status_pedido import StatusPedido
 from ecommerce.pagamento import Pagamento
-
+from ecommerce.estrategia_desconto import EstrategiaDesconto
 class Pedido:
 
     def __init__(self) -> None:
@@ -26,9 +26,11 @@ class Pedido:
         preco_no_momento = produto.preco
         self._itens.append(ItemPedido(produto, quantidade, preco_no_momento))
 
-    def calcular_total(self) -> float:
-        return sum(item.calcular_subtotal() for item in self._itens)
-
+    def calcular_total(self, estrategia_desconto: EstrategiaDesconto | None = None) -> float:
+        total = sum(item.calcular_subtotal() for item in self._itens)
+        if estrategia_desconto is None:
+            return total
+        return estrategia_desconto.calcular(total)
     def quantidade_itens(self) -> int:
         return len(self._itens)
     def _transicionar(self, novo_status: str) -> None:
